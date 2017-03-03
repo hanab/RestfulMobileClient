@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RestfulMobileClientTests/RestfulMobileClientTests.swift"
-            timestampString = "510242505.907102"
+            timestampString = "510244277.587492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "testPhotoData()"
             landmarkType = "7">
          </BreakpointContent>
