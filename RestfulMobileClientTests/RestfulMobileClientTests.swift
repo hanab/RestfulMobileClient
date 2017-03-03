@@ -46,8 +46,9 @@ class RestfulMobileClientTests: XCTestCase {
         XCTAssert(album1.1 == "http://placehold.it/150/30ac17")
         let numberOfPhotsosInAlbum2 = viewModel.getNumberOfPhotos(index: 2)
         XCTAssert(numberOfPhotsosInAlbum2 == 50)
-        let albumOneThirdPhoto = viewModel.getPhontoOnAlbumAtIndex(albumId: 1, photoID: 2)
-        XCTAssert(albumOneThirdPhoto?.title == "officia porro iure quia iusto qui ipsa ut modi")
-        XCTAssert(albumOneThirdPhoto?.thumbnailUrl == "http://placehold.it/150/1941e9")
+        if let albumOneThirdPhoto = viewModel.getPhontoOnAlbumAtIndex(albumId: 1, photoID: 2) {
+            XCTAssert(albumOneThirdPhoto.title == "officia porro iure quia iusto qui ipsa ut modi")
+            XCTAssert(albumOneThirdPhoto.thumbnailUrl == "http://placehold.it/150/1941e9")
+        }
     }
 }
