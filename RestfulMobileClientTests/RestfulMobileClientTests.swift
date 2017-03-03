@@ -20,7 +20,7 @@ class RestfulMobileClientTests: XCTestCase {
     
     func testUsersData() {
         let testExpectation =  expectation(description: "User info expectation")
-         viewModel.getAllUsersFromAPIRespons{
+         viewModel.getAllUsersFromAPIResponse{
           testExpectation.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)
@@ -34,7 +34,7 @@ class RestfulMobileClientTests: XCTestCase {
     
     func testPhotoData() {
         let testExpectation =  expectation(description: "Photos info expectation")
-        viewModel.getAllPhotosFromAPIRespons{
+        viewModel.getAllPhotosFromAPIResponse{
             testExpectation.fulfill()
         }
         waitForExpectations(timeout: 10, handler: nil)
@@ -47,7 +47,7 @@ class RestfulMobileClientTests: XCTestCase {
         let numberOfPhotsosInAlbum2 = viewModel.getNumberOfPhotos(index: 2)
         XCTAssert(numberOfPhotsosInAlbum2 == 50)
         let albumOneThirdPhoto = viewModel.getPhontoOnAlbumAtIndex(albumId: 1, photoID: 2)
-        XCTAssert(albumOneThirdPhoto.title == "officia porro iure quia iusto qui ipsa ut modi")
-        XCTAssert(albumOneThirdPhoto.thumbnailUrl == "http://placehold.it/150/1941e9")
+        XCTAssert(albumOneThirdPhoto?.title == "officia porro iure quia iusto qui ipsa ut modi")
+        XCTAssert(albumOneThirdPhoto?.thumbnailUrl == "http://placehold.it/150/1941e9")
     }
 }
