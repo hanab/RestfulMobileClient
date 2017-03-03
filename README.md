@@ -26,5 +26,5 @@ SnapKit was used to draw layout constraints
 XCTest class was used to write small unit tests for some of the functions in the project.
 
 ## Networking
-For networking URLSession class was used, Third party labriaries such as alamofire can be also used to do the same task.
+For networking URLSession class was used, Third party libraries such as alamofire can be also used to do the same task.
 
