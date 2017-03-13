@@ -1,7 +1,7 @@
 # RestfulMobileClient
 
 ## Demo
-![alt text](https://media.giphy.com/media/3o7bu9klXNWIQ9TN7O/giphy.gif "demo")
+[Click here](https://media.giphy.com/media/3o7bu9klXNWIQ9TN7O/giphy.gif)
 
 ##Users and Photos list
 ##Introduction
