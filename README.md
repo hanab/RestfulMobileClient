@@ -1,9 +1,7 @@
 # Rest Client Iphone App
 
 ## Demo
-[Click here](https://media.giphy.com/media/3o7bu9klXNWIQ9TN7O/giphy.gif)
-
-<img src="http://hanabelete.com/usersList.png" width="350" height="550">
+![Click here](https://media.giphy.com/media/3ohzdTeyDDmh7qRhi8/giphy.gif)
 
 ## Features
   * The application shows the list of usernames from "http://jsonplaceholder.typicode.com".
