@@ -1,11 +1,14 @@
 # RestfulMobileClient
+
+## Demo
+![alt text](https://media.giphy.com/media/3o7bu9klXNWIQ9TN7O/giphy.gif "demo")
+
 ##Users and Photos list
 ##Introduction
 The application shows the list of usernames from "http://jsonplaceholder.typicode.com"  and also has a section to show details information of each user.
 The photos section shows the list of all albums and the photos in each album.
 
 
-<img src="http://hanabelete.com/usersList.png" width="350" height="550">
 
 
 ## FrameWorkes Used
