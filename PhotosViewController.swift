@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SnapKit
 
 class PhotosViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
@@ -24,14 +25,36 @@ class PhotosViewController: UIViewController, UICollectionViewDataSource,UIColle
             frame.size.height -= navHeight
         }
         let layout:UICollectionViewFlowLayout = self.setupLayout(numberOfItems: 3)
-        let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+        var collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: self.cellId)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = UIColor.white
-       
+        
         return collectionView
+    }()
+    
+    //MARK: Activity indicator View
+    private lazy var loadingView: UIView = {
+        let view: UIView = UIView()
+        return view
+    }()
+    
+    private lazy var loadingLabel: UILabel = {
+        let label: UILabel = UILabel()
+        label.font = UIFont.italicSystemFont(ofSize: 16)
+        label.preferredMaxLayoutWidth = 100
+        label.textColor = UIColor.gray
+        label.textAlignment = NSTextAlignment.center
+        label.text = "Loading..."
+        return label
+    }()
+    
+    private lazy var spinner: UIActivityIndicatorView = {
+        let spinner: UIActivityIndicatorView = UIActivityIndicatorView()
+        spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        return spinner
     }()
     
     //MARK: Init
@@ -39,10 +62,12 @@ class PhotosViewController: UIViewController, UICollectionViewDataSource,UIColle
         super.viewDidLoad()
         self.view.addSubview(collectionView)
         self.title = "Photos"
+        self.setActivityIndicatorView()
         //Load data from network
         photoData.getAllPhotosFromAPIResponse{
             self.photoData.organizePhotos()
             self.collectionView.reloadData()
+            self.removeActivityIndicatorView()
         }
     }
     
@@ -67,6 +92,41 @@ class PhotosViewController: UIViewController, UICollectionViewDataSource,UIColle
         layout.itemSize = CGSize(width: size, height: size)
         return layout
     
+    }
+    
+    //MARK: Activity indicator loading
+    private func setActivityIndicatorView() {
+        self.spinner.startAnimating()
+        //add subviews
+        loadingView.addSubview(self.spinner)
+        loadingView.addSubview(self.loadingLabel)
+        self.collectionView.addSubview(loadingView)
+        
+        var navigationHeight: CGFloat = 0.0
+        if let height = (self.navigationController?.navigationBar.frame.height){
+            navigationHeight = height
+        }
+        //add constraints to activity indicator view
+        loadingView.snp.makeConstraints { (make) in
+            make.centerX.equalTo(collectionView.snp.centerX)
+            make.centerY.equalTo(collectionView.snp.centerY).offset(-navigationHeight)
+            make.width.equalTo(240)
+            make.height.equalTo(100)
+        }
+        spinner.snp.makeConstraints { (make) in
+            make.centerX.equalTo(collectionView.snp.centerX)
+            make.left.right.top.equalTo(0)
+            make.bottom.equalTo(loadingLabel).offset(30)
+        }
+        loadingLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(collectionView.snp.centerX)
+            make.bottom.equalTo(0)
+        }
+    }
+    
+    private func removeActivityIndicatorView() {
+        self.spinner.stopAnimating()
+        self.loadingLabel.isHidden = true
     }
     
     //MARK: CollectionView Datasource methods

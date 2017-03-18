@@ -122,7 +122,7 @@ class ViewModel {
     //group photos into albums
     func organizePhotos (){
         self.fotosById = self.photos.group {$0.albumId}
-        for album in self.fotosById {
+        for album in self.fotosById { 
             self.organizedPhotos[album.key] = album.value[0].thumbnailUrl
         }
     }
