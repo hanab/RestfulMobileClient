@@ -23,19 +23,6 @@ struct User {
     var address: Address
     var website: String
     var phone: String
-    
-    //MARK: Init
-    init(id: Int, name: String, userName: String, email: String, company: Company, address: Address, website:String, phone: String ) {
-        
-        self.id = id
-        self.name = name
-        self.userName = userName
-        self.email = email
-        self.company = company
-        self.address = address
-        self.website = website
-        self.phone = phone
-    }
 }
 
 // MARK: Company struct
@@ -47,16 +34,20 @@ struct Company {
     var bs: String
     
     //MARK: Init
-    init(name:String, catchPhrase: String, bs:String) {
-       self.name = name
-       self.catchPhrase = catchPhrase
-       self.bs = bs
+    init? (json: JSON) {
+        let companyName = json["name"].string ?? ""
+        let companyCatchPhrase = json["catchPhrase"].string ?? ""
+        let companyBS = json["bs"].string ?? ""
+        self.name = companyName
+        self.bs = companyBS
+        self.catchPhrase = companyCatchPhrase
     }
 }
 
 //MARK: Address struct
 struct Address {
     
+    //MARK: Properties
     var street: String
     var suite: String
     var city: String
@@ -64,11 +55,19 @@ struct Address {
     var geo:LocationCoordinate
 
     //MARK: Init
-    init(street: String, suite: String, city: String, zipCode: String, geo:LocationCoordinate) {
-        self.street = street
-        self.suite = suite
-        self.city = city
-        self.zipCode = zipCode
+    init? (json: JSON) {
+        let cStreet = json["street"].string ?? ""
+        let cSuite = json["suite"].string ?? ""
+        let cCity = json["city"].string ?? ""
+        let cZipCode = json["zipcode"].string ?? ""
+        // get location coordinates
+        let cGeoLong = json["geo"]["lng"].doubleValue
+        let cGeoLati = json["geo"]["lat"].doubleValue
+        let geo = LocationCoordinate(cGeoLati, cGeoLong)
+        self.street = cStreet
+        self.suite = cSuite
+        self.city = cCity
+        self.zipCode = cZipCode
         self.geo = geo
     }
 }
@@ -84,27 +83,25 @@ extension User {
         let email = json["email"].string
         let website = json["website"].string
         let phone = json["phone"].string
-        // construct address object
-        let cStreet = json["address"]["street"].string ?? ""
-        let cSuite = json["address"]["suite"].string ?? ""
-        let cCity = json["address"]["city"].string ?? ""
-        let cZipCode = json["address"]["zipcode"].string ?? ""
-        // get location coordinates
-        let cGeoLong = json["address"]["geo"]["lng"].doubleValue
-        let cGeoLati = json["address"]["geo"]["lat"].doubleValue
-        let geo = LocationCoordinate(cGeoLati, cGeoLong)
-        let address = Address(street: cStreet, suite: cSuite, city: cCity, zipCode: cZipCode, geo: geo)
-        //consrtuct Company
-        let companyName = json["company"]["name"].string ?? ""
-        let companyCatchPhrase = json["company"]["catchPhrase"].string ?? ""
-        let companyBS = json["company"]["bs"].string ?? ""
-        let companyInfo = Company(name: companyName, catchPhrase: companyCatchPhrase, bs: companyBS)
-        //construct User
+        //Address JSON object
+        let addressJson = json["address"] as JSON
+        //Company JSON object
+        let companyJson = json["company"] as JSON
+        //Construct user object
         self.id = id
         self.name = name ?? ""
         self.userName = userName ?? ""
         self.email = email ?? ""
-        self.company = companyInfo
+        if let company = Company(json: companyJson){
+            self.company = company
+        }
+        guard let company = Company(json: companyJson) else {
+            return nil
+        }
+        self.company = company
+        guard let address = Address(json: addressJson) else  {
+            return nil
+        }
         self.address = address
         self.website = website ?? ""
         self.phone = phone ?? ""

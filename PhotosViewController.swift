@@ -10,13 +10,12 @@ import UIKit
 import SwiftyJSON
 import SnapKit
 
-class PhotosViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class PhotosViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     //MARK: Properties
-    fileprivate var photoData =  ViewModel()
+    fileprivate var photoData =  PhotosViewModel()
     fileprivate var cellId = "Cell"
     fileprivate var photoMode = -1 //used to chose between albums and photos in an album
-    fileprivate var apiResponse: PlaceholderAPIClient = PlaceholderAPIClient()
     //lazy instantation of UICollectionView
     lazy var collectionView: UICollectionView = {
         var frame:CGRect = self.view.bounds
@@ -31,7 +30,6 @@ class PhotosViewController: UIViewController, UICollectionViewDataSource,UIColle
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: self.cellId)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = UIColor.white
-        
         return collectionView
     }()
     
@@ -128,6 +126,10 @@ class PhotosViewController: UIViewController, UICollectionViewDataSource,UIColle
         self.spinner.stopAnimating()
         self.loadingLabel.isHidden = true
     }
+}
+
+//MARK: CollectionView datasource and delegate
+extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     //MARK: CollectionView Datasource methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

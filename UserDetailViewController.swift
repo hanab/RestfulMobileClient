@@ -11,13 +11,16 @@ import Foundation
 
 // protocol implmented by view controller to desplay an alertview when button is clicked
 protocol AlertViewDelegate {
+    
     func show()
 }
 
 class UserDetailViewController: UIViewController, AlertViewDelegate {
+    
     //MARK: Properties
     fileprivate var companyInfo:String = ""
-    fileprivate let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    // data passed from another viewcontroller
+    var selectedUser: User?
     var subView: CustomView!
 
     //MARK: View lifecycle methods
@@ -25,33 +28,32 @@ class UserDetailViewController: UIViewController, AlertViewDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.brown
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
         self.subView = CustomView(frame: self.view.frame)
-        if let  userame = appDelegate.selectedUser?.userName {
+        if let  userame = selectedUser?.userName {
             subView.username =  userame
         }
-        if let  name = appDelegate.selectedUser?.name {
+        if let  name = selectedUser?.name {
             subView.name =  "Name: \(name)"
         }
-        if let  email = appDelegate.selectedUser?.email {
+        if let  email = selectedUser?.email {
             subView.email =  "Email: \(email)"        }
-        if let  phone = appDelegate.selectedUser?.phone {
+        if let  phone = selectedUser?.phone {
             subView.phone =  "Phone: \(phone)"
         }
-        if let  street = appDelegate.selectedUser?.address.street {
-            if let city = appDelegate.selectedUser?.address.city {
+        if let  street = selectedUser?.address.street {
+            if let city = selectedUser?.address.city {
                 subView.address = "Address: " + street + ", " + city
             }
         }
-        if let companyName = appDelegate.selectedUser?.company.name {
+        if let companyName = selectedUser?.company.name {
             subView.companyName = "Company: \(companyName)"
         }
-        if let catchPhrase = appDelegate.selectedUser?.company.catchPhrase {
-            if let bs  = appDelegate.selectedUser?.company.bs {
+        if let catchPhrase = selectedUser?.company.catchPhrase {
+            if let bs  = selectedUser?.company.bs {
              self.companyInfo = "Catch phrase: " + catchPhrase + "\n" + "BS: " + bs
             }
-        
         }
         subView.delegate = self
         self.view.addSubview(subView)

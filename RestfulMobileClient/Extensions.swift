@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 public extension UIImageView {
+    
     //UIImageview extention to load image asynchronously
     public static func loadImageFromUrl(imageUrlString: String, completion: @escaping ((_ urlString: String, _ image: UIImage) -> ())) {
         guard let url = URL(string: imageUrlString) else {
@@ -30,6 +31,7 @@ public extension UIImageView {
 
 // seuence extention used to group arrays of photos into dictionary by their album id
 public extension Sequence {
+    
     func group<U: Hashable>(by key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
         var categories: [U: [Iterator.Element]] = [:]
         for element in self {

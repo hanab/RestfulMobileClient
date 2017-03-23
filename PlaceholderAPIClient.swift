@@ -31,7 +31,6 @@ class PlaceholderAPIClient {
     
     // Function to get urlrequest object from uri string
     private func clientURLRequest(url: URL, path: String, params: Dictionary<String, AnyObject>? = nil) -> URLRequest {
-        
         var request = URLRequest(url: url)
         if let params = params {
             var paramString = ""
@@ -47,9 +46,7 @@ class PlaceholderAPIClient {
     }
     
     //function to get json object from urlrequest
-    private func dataTask( request: URLRequest, method:String, completion: @escaping (Bool,
-        AnyObject?) -> ()) {
-        
+    private func dataTask( request: URLRequest, method:String, completion: @escaping (Bool, AnyObject?) -> ()) {
         var request = request
         request.httpMethod = method
         let session = URLSession(configuration: URLSessionConfiguration.default)

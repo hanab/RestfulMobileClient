@@ -13,8 +13,7 @@ class UsersViewController: UITableViewController {
     
     //MARK: Properties
     fileprivate let cellIdentifer = "Cell"
-    fileprivate let data = ViewModel()
-    fileprivate let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    fileprivate let data = UsersViewModel()
     
     //MARK : lifecycle methods
     override func viewDidLoad() {
@@ -52,8 +51,8 @@ extension UsersViewController {
     
     //MARK: Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        appDelegate.selectedUser = self.data.getuserAtIndex(index: indexPath.row)
         let secondViewController:UserDetailViewController = UserDetailViewController()
+        secondViewController.selectedUser = self.data.getuserAtIndex(index: indexPath.row)
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
 }

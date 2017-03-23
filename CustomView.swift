@@ -151,7 +151,7 @@ class CustomView: UIView {
        delegate?.show()
     }
     
-    //MARK: custom methos to add constraints
+    //MARK: custom methods to add constraints
     func addConstraintToContainerSubViews() {
         leftView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(80)

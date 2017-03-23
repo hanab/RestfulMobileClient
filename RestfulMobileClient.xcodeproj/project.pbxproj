@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A04C5B21E6578B600FE2C0F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A04C5B11E6578B600FE2C0F /* ViewModel.swift */; };
 		1A057B4F1E65ADC200752C8C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A057B4E1E65ADC200752C8C /* UserDetailViewController.swift */; };
 		1A06A5F31E5F1EA100F9B574 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06A5F21E5F1EA100F9B574 /* PhotosViewController.swift */; };
 		1A06A5F71E5F223200F9B574 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A06A5F61E5F223200F9B574 /* MainViewController.swift */; };
@@ -26,6 +25,8 @@
 		1AA40D481E5C2CD2003698FA /* RestfulMobileClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D471E5C2CD2003698FA /* RestfulMobileClientTests.swift */; };
 		1AA40D571E5C2DD3003698FA /* PlaceholderAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D561E5C2DD3003698FA /* PlaceholderAPIClient.swift */; };
 		1AA40D591E5C30E5003698FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D581E5C30E5003698FA /* User.swift */; };
+		1AB1895A1E83F6AE009102DD /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB189591E83F6AE009102DD /* UsersViewModel.swift */; };
+		1AB1895C1E83F6C6009102DD /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1895B1E83F6C6009102DD /* PhotosViewModel.swift */; };
 		E79FF095C06BEB6B0ADF46B1 /* Pods_RestfulMobileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2A3F3CFBFE67BAE0E0CC84 /* Pods_RestfulMobileClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A04C5B11E6578B600FE2C0F /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = ../ViewModel.swift; sourceTree = "<group>"; };
 		1A057B4E1E65ADC200752C8C /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		1A06A5F21E5F1EA100F9B574 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		1A06A5F61E5F223200F9B574 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		1AA40D491E5C2CD2003698FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA40D561E5C2DD3003698FA /* PlaceholderAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderAPIClient.swift; path = ../PlaceholderAPIClient.swift; sourceTree = "<group>"; };
 		1AA40D581E5C30E5003698FA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1AB189591E83F6AE009102DD /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		1AB1895B1E83F6C6009102DD /* PhotosViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 		3C37F67C38D90D0FC9E1D139 /* Pods-RestfulMobileClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulMobileClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestfulMobileClient/Pods-RestfulMobileClient.debug.xcconfig"; sourceTree = "<group>"; };
 		421D1139809DB0638CC7F4B9 /* Pods_RestfulMobileClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestfulMobileClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2A3F3CFBFE67BAE0E0CC84 /* Pods_RestfulMobileClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestfulMobileClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +200,8 @@
 		1AF6C6201E681A8700736330 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1A04C5B11E6578B600FE2C0F /* ViewModel.swift */,
+				1AB189591E83F6AE009102DD /* UsersViewModel.swift */,
+				1AB1895B1E83F6C6009102DD /* PhotosViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -383,11 +386,12 @@
 				1A06A6011E602F7800F9B574 /* CollectionViewCell.swift in Sources */,
 				1A057B4F1E65ADC200752C8C /* UserDetailViewController.swift in Sources */,
 				1AA40D571E5C2DD3003698FA /* PlaceholderAPIClient.swift in Sources */,
-				1A04C5B21E6578B600FE2C0F /* ViewModel.swift in Sources */,
 				1A06ABAD1E66DD6000DD30F3 /* Photo.swift in Sources */,
 				1A0AA5E31E65FE480031F75C /* CustomView.swift in Sources */,
+				1AB1895C1E83F6C6009102DD /* PhotosViewModel.swift in Sources */,
 				1AA40D351E5C2CD1003698FA /* UsersViewController.swift in Sources */,
 				1A06ABB01E66EA3E00DD30F3 /* Extensions.swift in Sources */,
+				1AB1895A1E83F6AE009102DD /* UsersViewModel.swift in Sources */,
 				1A06A5F71E5F223200F9B574 /* MainViewController.swift in Sources */,
 				1AA40D331E5C2CD1003698FA /* AppDelegate.swift in Sources */,
 				1A06A5F31E5F1EA100F9B574 /* PhotosViewController.swift in Sources */,

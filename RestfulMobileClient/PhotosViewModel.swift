@@ -1,23 +1,21 @@
 //
-//  UsersData.swift
+//  PhotosViewModel.swift
 //  RestfulMobileClient
 //
-//  Created by Hana  Demas on 2/28/17.
+//  Created by Hana  Demas on 3/23/17.
 //  Copyright © 2017 ___HANADEMAS___. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-//URIs to get users and photos
-fileprivate let  userUrlPath:String =  "http://jsonplaceholder.typicode.com/users"
+//URIs to get photos
 fileprivate let  photoUrlPath: String = "http://jsonplaceholder.typicode.com/photos"
 
-class ViewModel {
+class PhotosViewModel {
     
     //MARK: Properties
     fileprivate var apiResponse: PlaceholderAPIClient = PlaceholderAPIClient()
-    fileprivate var users: [User] = [User]()
     fileprivate var photos: [Photo] = [Photo]()
     //properies used to group photos into album
     fileprivate var fotosById: [Int: [Photo]] = [Int: [Photo]]()
@@ -25,20 +23,7 @@ class ViewModel {
     fileprivate var albumKeys: [Int] = [Int]()
     fileprivate var photosKeys: [Int] = [Int]()
     
-    //MARK: Custom Functions for parsing network respons into users and photos object arrays
-    func getUsersFromJsonResponse(res: ResponseObject, completion: (() -> ())?){
-        for i in 0...(res.count) - 1 {
-            let j: JSON = JSON(res[i])
-            if  let user: User = User.init(json: j) {
-                self.users.append(user)
-            }
-        }
-        if users.count > 1 {
-            users.sort {$0.name < $1.name }
-        }
-        completion?()
-    }
-    
+    //MARK: Custom Functions for parsing network respons into photos object array
     func getPhotosFromJsonResponse(res: ResponseObject, completion: (() -> ())?){
         for i in 0...(res.count) - 1 {
             let j: JSON = JSON(res[i])
@@ -50,17 +35,6 @@ class ViewModel {
     }
     
     //MARK: Custom Functions for feteching data from network and parsing into objects
-    func getAllUsersFromAPIResponse(completion: (() -> ())?) {
-        apiResponse.fetchDataFromNetwork(url:userUrlPath){ (res) in
-            if let res = res {
-                self.getUsersFromJsonResponse(res: res , completion: completion)
-            } else {
-                completion?()
-                print("error Fetching data")
-            }
-        }
-    }
-    
     func getAllPhotosFromAPIResponse(completion: (() -> ())?) {
         apiResponse.fetchDataFromNetwork(url:photoUrlPath){ (res) in
             if let res = res {
@@ -73,17 +47,6 @@ class ViewModel {
     }
     
     //MARK: Custom functions for preparing data to populate UI
-    
-    // for Users list table view
-    func getNumberOfUsers()->Int{
-        return self.users.count
-    }
-    
-    func getuserAtIndex(index:Int )-> User{
-       return users[index]
-    }
-    
-    //for Albums and Photos
     //get number of photos in an album
     func getNumberOfPhotos(index:Int)->Int{
         var count: Int = 0
@@ -122,7 +85,7 @@ class ViewModel {
     //group photos into albums
     func organizePhotos (){
         self.fotosById = self.photos.group {$0.albumId}
-        for album in self.fotosById { 
+        for album in self.fotosById {
             self.organizedPhotos[album.key] = album.value[0].thumbnailUrl
         }
     }
