@@ -21,12 +21,12 @@
 		1AA40D331E5C2CD1003698FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D321E5C2CD1003698FA /* AppDelegate.swift */; };
 		1AA40D351E5C2CD1003698FA /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D341E5C2CD1003698FA /* UsersViewController.swift */; };
 		1AA40D3A1E5C2CD2003698FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AA40D391E5C2CD2003698FA /* Assets.xcassets */; };
-		1AA40D3D1E5C2CD2003698FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA40D3B1E5C2CD2003698FA /* LaunchScreen.storyboard */; };
 		1AA40D481E5C2CD2003698FA /* RestfulMobileClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D471E5C2CD2003698FA /* RestfulMobileClientTests.swift */; };
 		1AA40D571E5C2DD3003698FA /* PlaceholderAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D561E5C2DD3003698FA /* PlaceholderAPIClient.swift */; };
 		1AA40D591E5C30E5003698FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA40D581E5C30E5003698FA /* User.swift */; };
 		1AB1895A1E83F6AE009102DD /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB189591E83F6AE009102DD /* UsersViewModel.swift */; };
 		1AB1895C1E83F6C6009102DD /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1895B1E83F6C6009102DD /* PhotosViewModel.swift */; };
+		1ADEA9B91E95050800523F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ADEA9B81E95050800523F2F /* LaunchScreen.storyboard */; };
 		E79FF095C06BEB6B0ADF46B1 /* Pods_RestfulMobileClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2A3F3CFBFE67BAE0E0CC84 /* Pods_RestfulMobileClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,18 +53,18 @@
 		1A0AA5E01E65F9130031F75C /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		1A0AA5E21E65FE480031F75C /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		1AA40D2F1E5C2CD1003698FA /* RestfulMobileClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestfulMobileClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AA40D321E5C2CD1003698FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1AA40D341E5C2CD1003698FA /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UsersViewController.swift; path = RestfulMobileClient/UsersViewController.swift; sourceTree = "<group>"; };
-		1AA40D391E5C2CD2003698FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RestfulMobileClient/Assets.xcassets; sourceTree = "<group>"; };
-		1AA40D3C1E5C2CD2003698FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1AA40D3E1E5C2CD2003698FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RestfulMobileClient/Info.plist; sourceTree = "<group>"; };
+		1AA40D321E5C2CD1003698FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RestfulMobileClient/AppDelegate/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1AA40D341E5C2CD1003698FA /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		1AA40D391E5C2CD2003698FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AA40D3E1E5C2CD2003698FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AA40D431E5C2CD2003698FA /* RestfulMobileClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestfulMobileClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA40D471E5C2CD2003698FA /* RestfulMobileClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestfulMobileClientTests.swift; sourceTree = "<group>"; };
 		1AA40D491E5C2CD2003698FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AA40D561E5C2DD3003698FA /* PlaceholderAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderAPIClient.swift; path = ../PlaceholderAPIClient.swift; sourceTree = "<group>"; };
+		1AA40D561E5C2DD3003698FA /* PlaceholderAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderAPIClient.swift; sourceTree = "<group>"; };
 		1AA40D581E5C30E5003698FA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1AB189591E83F6AE009102DD /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		1AB1895B1E83F6C6009102DD /* PhotosViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		1ADEA9B81E95050800523F2F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C37F67C38D90D0FC9E1D139 /* Pods-RestfulMobileClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestfulMobileClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RestfulMobileClient/Pods-RestfulMobileClient.debug.xcconfig"; sourceTree = "<group>"; };
 		421D1139809DB0638CC7F4B9 /* Pods_RestfulMobileClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestfulMobileClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C2A3F3CFBFE67BAE0E0CC84 /* Pods_RestfulMobileClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RestfulMobileClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			children = (
 				1A06ABAF1E66EA3E00DD30F3 /* Extensions.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1AA40D261E5C2CD1003698FA = {
@@ -121,14 +121,15 @@
 		1AA40D311E5C2CD1003698FA /* RestfulMobileClient */ = {
 			isa = PBXGroup;
 			children = (
-				1AF6C6201E681A8700736330 /* ViewModel */,
+				1ADEA9B71E95029700523F2F /* AppDelegate */,
+				1ADEA9B61E95026300523F2F /* Support Files */,
+				1AF6C6201E681A8700736330 /* ViewModels */,
 				1AF6C61F1E681A7400736330 /* Network */,
 				1A06ABAE1E66EA0100DD30F3 /* Extensions */,
 				1AA40D521E5C2CE2003698FA /* Views */,
 				1AA40D531E5C2CEB003698FA /* Models */,
 				1AA40D541E5C2CFC003698FA /* ViewControllers */,
 				1AA40D551E5C2D0C003698FA /* Resources */,
-				1AA40D321E5C2CD1003698FA /* AppDelegate.swift */,
 			);
 			path = RestfulMobileClient;
 			sourceTree = "<group>";
@@ -148,8 +149,7 @@
 				1A06A6001E602F7800F9B574 /* CollectionViewCell.swift */,
 				1A0AA5E21E65FE480031F75C /* CustomView.swift */,
 			);
-			name = Views;
-			path = ..;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1AA40D531E5C2CEB003698FA /* Models */ = {
@@ -158,8 +158,7 @@
 				1AA40D581E5C30E5003698FA /* User.swift */,
 				1A06ABAC1E66DD6000DD30F3 /* Photo.swift */,
 			);
-			name = Models;
-			path = ..;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1AA40D541E5C2CFC003698FA /* ViewControllers */ = {
@@ -170,8 +169,7 @@
 				1A06A5F61E5F223200F9B574 /* MainViewController.swift */,
 				1A057B4E1E65ADC200752C8C /* UserDetailViewController.swift */,
 			);
-			name = ViewControllers;
-			path = ..;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1AA40D551E5C2D0C003698FA /* Resources */ = {
@@ -179,14 +177,28 @@
 			children = (
 				1AA40D391E5C2CD2003698FA /* Assets.xcassets */,
 				1A0AA5E01E65F9130031F75C /* info.png */,
-				1AA40D3E1E5C2CD2003698FA /* Info.plist */,
-				1AA40D3B1E5C2CD2003698FA /* LaunchScreen.storyboard */,
 				1A0AA5DE1E65C0240031F75C /* profilePic.png */,
 				1A06A5FA1E5F24A000F9B574 /* users.png */,
 				1A06A5F81E5F249400F9B574 /* photos.png */,
+				1ADEA9B81E95050800523F2F /* LaunchScreen.storyboard */,
 			);
-			name = Resources;
-			path = ..;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1ADEA9B61E95026300523F2F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AA40D3E1E5C2CD2003698FA /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		1ADEA9B71E95029700523F2F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1AA40D321E5C2CD1003698FA /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		1AF6C61F1E681A7400736330 /* Network */ = {
@@ -194,16 +206,16 @@
 			children = (
 				1AA40D561E5C2DD3003698FA /* PlaceholderAPIClient.swift */,
 			);
-			name = Network;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		1AF6C6201E681A8700736330 /* ViewModel */ = {
+		1AF6C6201E681A8700736330 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				1AB189591E83F6AE009102DD /* UsersViewModel.swift */,
 				1AB1895B1E83F6C6009102DD /* PhotosViewModel.swift */,
 			);
-			name = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		97AB14878FF293261206B062 /* Pods */ = {
@@ -311,10 +323,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA40D3D1E5C2CD2003698FA /* LaunchScreen.storyboard in Resources */,
 				1AA40D3A1E5C2CD2003698FA /* Assets.xcassets in Resources */,
 				1A06A5F91E5F249400F9B574 /* photos.png in Resources */,
 				1A06A5FB1E5F24A000F9B574 /* users.png in Resources */,
+				1ADEA9B91E95050800523F2F /* LaunchScreen.storyboard in Resources */,
 				1A0AA5DF1E65C0240031F75C /* profilePic.png in Resources */,
 				1A0AA5E11E65F9130031F75C /* info.png in Resources */,
 			);
@@ -416,18 +428,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		1AA40D3B1E5C2CD2003698FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AA40D3C1E5C2CD2003698FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = RestfulMobileClient;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		1AA40D4A1E5C2CD2003698FA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -526,7 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JQ99DJ6SM6;
-				INFOPLIST_FILE = RestfulMobileClient/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RestfulMobileClient/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HANABELETE.RestfulMobileClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,7 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JQ99DJ6SM6;
-				INFOPLIST_FILE = RestfulMobileClient/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RestfulMobileClient/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HANABELETE.RestfulMobileClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
